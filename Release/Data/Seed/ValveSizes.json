@@ -1,0 +1,1038 @@
+[
+    {
+      "SizeId": 1,
+      "Size": 21,
+      "EOA": 1.6,
+      "VTValveTypeId": 1,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 2,
+      "Size": 25,
+      "EOA": 2.6,
+      "VTValveTypeId": 36,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 3,
+      "Size": 27,
+      "EOA": 3.2,
+      "VTValveTypeId": 36,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 4,
+      "Size": 19,
+      "EOA": 1.58,
+      "VTValveTypeId": 20,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 5,
+      "Size": 21,
+      "EOA": 1.9,
+      "VTValveTypeId": 20,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 6,
+      "Size": 23,
+      "EOA": 2.07,
+      "VTValveTypeId": 20,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 7,
+      "Size": 25,
+      "EOA": 2.33,
+      "VTValveTypeId": 20,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 8,
+      "Size": 23,
+      "EOA": 2.5,
+      "VTValveTypeId": 36,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 9,
+      "Size": 19,
+      "EOA": 1.5,
+      "VTValveTypeId": 19,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 10,
+      "Size": 23,
+      "EOA": 2.3,
+      "VTValveTypeId": 19,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 11,
+      "Size": 25,
+      "EOA": 2.7,
+      "VTValveTypeId": 19,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 12,
+      "Size": 27,
+      "EOA": 3.2,
+      "VTValveTypeId": 19,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 13,
+      "Size": 29,
+      "EOA": 3.2,
+      "VTValveTypeId": 19,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 14,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 18,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 15,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 18,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 16,
+      "Size": 21,
+      "EOA": 1.8,
+      "VTValveTypeId": 19,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 17,
+      "Size": 21,
+      "EOA": 2.1,
+      "VTValveTypeId": 36,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 18,
+      "Size": 31,
+      "EOA": 2.63,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 19,
+      "Size": 29,
+      "EOA": 3.2,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 20,
+      "Size": 18,
+      "EOA": 1,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 21,
+      "Size": 19,
+      "EOA": 1,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 22,
+      "Size": 21,
+      "EOA": 1.3,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 23,
+      "Size": 23,
+      "EOA": 1.4,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 24,
+      "Size": 25,
+      "EOA": 1.5,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 25,
+      "Size": 27,
+      "EOA": 2.2,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 26,
+      "Size": 29,
+      "EOA": 3.2,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 27,
+      "Size": 31,
+      "EOA": 2.63,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 28,
+      "Size": 16,
+      "EOA": 1,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 29,
+      "Size": 18,
+      "EOA": 1,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 30,
+      "Size": 19,
+      "EOA": 1,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 31,
+      "Size": 21,
+      "EOA": 1.3,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 32,
+      "Size": 23,
+      "EOA": 1.4,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 33,
+      "Size": 25,
+      "EOA": 1.5,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 34,
+      "Size": 27,
+      "EOA": 2.2,
+      "VTValveTypeId": 35,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 35,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 17,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 36,
+      "Size": 16,
+      "EOA": 1,
+      "VTValveTypeId": 34,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 37,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 17,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 38,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 2,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 39,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 11,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 40,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 11,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 41,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 12,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 42,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 12,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 43,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 13,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 44,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 13,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 45,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 10,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 46,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 14,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 47,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 15,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 48,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 15,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 49,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 16,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 50,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 16,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 51,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 28,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 52,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 28,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 53,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 14,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 54,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 10,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 55,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 9,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 56,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 9,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 57,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 3,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 58,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 3,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 59,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 4,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 60,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 4,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 61,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 5,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 62,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 5,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 63,
+      "Size": 25,
+      "EOA": 1.8,
+      "VTValveTypeId": 6,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 64,
+      "Size": 27,
+      "EOA": 2.3,
+      "VTValveTypeId": 6,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 65,
+      "Size": 29,
+      "EOA": 2.6,
+      "VTValveTypeId": 6,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 66,
+      "Size": 31,
+      "EOA": 2.6,
+      "VTValveTypeId": 6,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 67,
+      "Size": 33,
+      "EOA": 2.5,
+      "VTValveTypeId": 6,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 68,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 7,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 69,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 7,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 70,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 8,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 71,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 8,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 72,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 2,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 73,
+      "Size": 31,
+      "EOA": 2.63,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 74,
+      "Size": 29,
+      "EOA": 2.63,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 75,
+      "Size": 27,
+      "EOA": 2.41,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 76,
+      "Size": 20,
+      "EOA": 1.7,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 77,
+      "Size": 18,
+      "EOA": 1.5,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 78,
+      "Size": 16,
+      "EOA": 1.2,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 79,
+      "Size": 31,
+      "EOA": 3.1,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 80,
+      "Size": 29,
+      "EOA": 3.1,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 81,
+      "Size": 27,
+      "EOA": 2.5,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 82,
+      "Size": 22,
+      "EOA": 2.1,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 83,
+      "Size": 25,
+      "EOA": 2.1,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 84,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 85,
+      "Size": 19,
+      "EOA": 1.2,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 86,
+      "Size": 31,
+      "EOA": 3.1,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 87,
+      "Size": 29,
+      "EOA": 3.1,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 88,
+      "Size": 27,
+      "EOA": 2.5,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 89,
+      "Size": 25,
+      "EOA": 2.1,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 90,
+      "Size": 23,
+      "EOA": 1.7,
+      "VTValveTypeId": 25,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 91,
+      "Size": 24,
+      "EOA": 2.5,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 92,
+      "Size": 26,
+      "EOA": 3.1,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 93,
+      "Size": 28,
+      "EOA": 3.1,
+      "VTValveTypeId": 24,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 94,
+      "Size": 23,
+      "EOA": 1.9,
+      "VTValveTypeId": 1,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 95,
+      "Size": 25,
+      "EOA": 2.03,
+      "VTValveTypeId": 1,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 96,
+      "Size": 27,
+      "EOA": 2.5,
+      "VTValveTypeId": 1,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 97,
+      "Size": 29,
+      "EOA": 2.2,
+      "VTValveTypeId": 21,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 98,
+      "Size": 27,
+      "EOA": 1.9,
+      "VTValveTypeId": 21,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 99,
+      "Size": 25,
+      "EOA": 1.8,
+      "VTValveTypeId": 21,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 100,
+      "Size": 23,
+      "EOA": 1.5,
+      "VTValveTypeId": 21,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 101,
+      "Size": 21,
+      "EOA": 1.3,
+      "VTValveTypeId": 21,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 102,
+      "Size": 29,
+      "EOA": 2.2,
+      "VTValveTypeId": 22,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 103,
+      "Size": 27,
+      "EOA": 1.9,
+      "VTValveTypeId": 22,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 104,
+      "Size": 25,
+      "EOA": 1.8,
+      "VTValveTypeId": 22,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 105,
+      "Size": 23,
+      "EOA": 1.5,
+      "VTValveTypeId": 22,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 106,
+      "Size": 21,
+      "EOA": 1.3,
+      "VTValveTypeId": 22,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 107,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 23,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 108,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 23,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 109,
+      "Size": 23,
+      "EOA": 1.7,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 110,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 111,
+      "Size": 19,
+      "EOA": 1.2,
+      "VTValveTypeId": 26,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 112,
+      "Size": 29,
+      "EOA": 1.6,
+      "VTValveTypeId": 27,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 113,
+      "Size": 25,
+      "EOA": 2.1,
+      "VTValveTypeId": 30,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 114,
+      "Size": 27,
+      "EOA": 2.2,
+      "VTValveTypeId": 30,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 115,
+      "Size": 29,
+      "EOA": 2.6,
+      "VTValveTypeId": 30,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 116,
+      "Size": 19,
+      "EOA": 1.7,
+      "VTValveTypeId": 31,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 117,
+      "Size": 21,
+      "EOA": 2,
+      "VTValveTypeId": 31,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 118,
+      "Size": 23,
+      "EOA": 2.5,
+      "VTValveTypeId": 31,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 119,
+      "Size": 25,
+      "EOA": 2.6,
+      "VTValveTypeId": 31,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 120,
+      "Size": 27,
+      "EOA": 3.5,
+      "VTValveTypeId": 31,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 121,
+      "Size": 29,
+      "EOA": 3.5,
+      "VTValveTypeId": 31,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 122,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 32,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 123,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 32,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 124,
+      "Size": 19,
+      "EOA": 1,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 125,
+      "Size": 21,
+      "EOA": 1.54,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 126,
+      "Size": 23,
+      "EOA": 1.63,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 127,
+      "Size": 25,
+      "EOA": 1.98,
+      "VTValveTypeId": 33,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 128,
+      "Size": 23,
+      "EOA": 1.9,
+      "VTValveTypeId": 30,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 129,
+      "Size": 19,
+      "EOA": 1.3,
+      "VTValveTypeId": 38,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 130,
+      "Size": 21,
+      "EOA": 1.8,
+      "VTValveTypeId": 30,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 131,
+      "Size": 31,
+      "EOA": 3.1,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 132,
+      "Size": 27,
+      "EOA": 1.55,
+      "VTValveTypeId": 27,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 133,
+      "Size": 25,
+      "EOA": 1.46,
+      "VTValveTypeId": 27,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 134,
+      "Size": 23,
+      "EOA": 1.33,
+      "VTValveTypeId": 27,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 135,
+      "Size": 21,
+      "EOA": 1.18,
+      "VTValveTypeId": 27,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 136,
+      "Size": 29,
+      "EOA": 1.6,
+      "VTValveTypeId": 29,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 137,
+      "Size": 27,
+      "EOA": 1.55,
+      "VTValveTypeId": 29,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 138,
+      "Size": 25,
+      "EOA": 1.46,
+      "VTValveTypeId": 29,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 139,
+      "Size": 23,
+      "EOA": 1.33,
+      "VTValveTypeId": 29,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 140,
+      "Size": 21,
+      "EOA": 1.18,
+      "VTValveTypeId": 29,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 141,
+      "Size": 19,
+      "EOA": 1,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 142,
+      "Size": 21,
+      "EOA": 1.3,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 143,
+      "Size": 23,
+      "EOA": 1.6,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 144,
+      "Size": 25,
+      "EOA": 1.9,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 145,
+      "Size": 27,
+      "EOA": 2.3,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 146,
+      "Size": 29,
+      "EOA": 2.8,
+      "VTValveTypeId": 37,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 147,
+      "Size": 19,
+      "EOA": 1.5,
+      "VTValveTypeId": 30,
+      "ValveTypeId": 0
+    },
+    {
+      "SizeId": 148,
+      "Size": 21,
+      "EOA": 1.5,
+      "VTValveTypeId": 38,
+      "ValveTypeId": 0
+    }
+  ]
