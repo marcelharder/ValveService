@@ -34,26 +34,33 @@ public class ValveCodeController : ControllerBase
   #region <!-- soa end points -->
 
   [HttpGet("getValveCodesInHospital/{type}/{position}/{hospitalId}")]
-  public async Task<IActionResult> getValveCodes(string type, string position, int hospitalId)
+  public async Task<IActionResult> getValveCodes(string type, string position, int hospitalId) // returns Full Class_Valve
   {
     var result = await _code.GetValveCodesInHospital(position, type, hospitalId);
     return Ok(result);
   }
 
-  [HttpGet("getExtraCodesInHospital/{type}/{position}/{hospitalId}")]
+  [HttpGet("products")]
+  public async Task<IActionResult> getAllCodes() 
+  {
+    var result = await _code.getAllProducts();
+    return Ok(result);
+  }
+
+  [HttpGet("getAllValve_CodeAsItems/{type}/{position}")] // returns List<Class_Item> from all ValveCodes
+  public async Task<IActionResult> getValveCodesItems(string type, string position)
+  {
+    var result = await _code.getAllTPProducts(position, type);
+    return Ok(result);
+  }
+
+  [HttpGet("getValve_CodeAsItemsNotInHospital/{type}/{position}/{hospitalId}")] // returns List<Class_Item>
   public async Task<IActionResult> getExtraValveCodes(string type, string position, int hospitalId)
   {
     var result = await _code.GetValveCodesNOTinHospital(position, type, hospitalId);
     return Ok(result);
   }
 
-  [HttpGet("getExtraDropDownCodesInHospital/{type}/{position}/{hospitalId}")]
-  public async Task<IActionResult> getExtraDropDownValveCodes(string type, string position, int hospitalId)
-  {
-    /* var result = await _code.GetExtraDropDownCodes(position, type, hospitalId);
-    return Ok(result); */
-    return Ok("These dropdowns are not implemented by the way");
-  }
 
   [HttpGet("writeHospitalIdToValveCode/{id}/{hospitalId}")]
   public async Task<IActionResult> getExtraValveCodes(int id, int hospitalId)
@@ -63,12 +70,27 @@ public class ValveCodeController : ControllerBase
   }
 
 
-  [HttpGet("{id}", Name = "getValveCode")]
+  [HttpGet("detailsByValveId/{id}", Name = "getValveCode")]
   public async Task<IActionResult> GetSpecificValveCode(int id)
   {
     var result = await _code.getDetailsByValveTypeId(id);
     return Ok(result);
   }
+
+ [HttpGet("detailsByProductCode/{id}")]
+  public async Task<IActionResult> GetSpecificValveCodeId(string id)
+  {
+    var result = await _code.getDetailsByProductCode(id);
+    return Ok(result);
+  }
+ 
+  [HttpGet("detailsByValveNo/{id}")]
+  public async Task<IActionResult> GetSpecificValveCodeByNo(int id)
+  {
+    var result = await _code.getDetailsByNo(id);
+    return Ok(result);
+  }
+
 
   [HttpPut]
   public async Task<IActionResult> UpdateValveCodes([FromBody] Valve_Code vc)

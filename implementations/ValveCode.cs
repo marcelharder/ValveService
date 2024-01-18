@@ -38,9 +38,9 @@ public class ValveCode : IValveCode
 
         }
     }
-    public async Task<List<Valve_Code>> GetValveCodesNOTinHospital(string location, string type, int hospitalId)
+    public async Task<List<Class_Item>> GetValveCodesNOTinHospital(string location, string type, int selectedHospital)
     {
-        var vctr = new List<Valve_Code>();
+        var vctr = new List<Class_Item>();
         var query = "SELECT * FROM ValveCodes WHERE Type = @type AND Implant_position = @location";
         using (var connection = _context.CreateConnection())
         {
@@ -49,19 +49,22 @@ public class ValveCode : IValveCode
             {
                 if (vc.hospitalId != null)
                 {
-                    var hospital = hospitalId.ToString().makeSureTwoChar();
-                    var help = vc.hospitalId.Split(',');
-                    if (!help.Contains(hospital))
+                    var hos = selectedHospital.ToString().makeSureTwoChar();
+                    var help_array = vc.hospitalId.Split(',');
+                    if (!help_array.Contains(hos))
                     {
-                        vctr.Add(vc);
+                        var ci = new Class_Item();
+                        ci.value = vc.ValveTypeId;
+                        ci.description = vc.uk_code;
+                        vctr.Add(ci);
                     }
                 }
-                else { vctr.Add(vc); }
+                else { }
             }
             return vctr;
         }
     }
-    public async Task<List<Class_Item>> getAllTPProducts(string location, string type, int hospitalId)
+    public async Task<List<Class_Item>> getAllTPProducts(string location, string type)
     {
         var vctr = new List<Class_Item>();
 
@@ -71,26 +74,12 @@ public class ValveCode : IValveCode
             var documents = await connection.QueryAsync<Valve_Code>(query, new { type, location });
             foreach (Valve_Code el in documents)
             {
-                if (el.hospitalId != null)
-                {
-                    var hospital = hospitalId.ToString().makeSureTwoChar();
-                    var help = el.hospitalId.Split(',');
-                    if (!help.Contains(hospital))
-                    {
+                var cl = new Class_Item();
+                cl.description = el.Description;
+                cl.value = el.ValveTypeId;
+                vctr.Add(cl);
 
-                        var cl = new Class_Item();
-                        cl.description = el.Description;
-                        cl.value = el.ValveTypeId;
-                        vctr.Add(cl);
-                    }
-                }
-                else
-                {
-                    var cl = new Class_Item();
-                    cl.description = el.Description;
-                    cl.value = el.ValveTypeId;
-                    vctr.Add(cl);
-                }
+                
             }
             return vctr;
         }
@@ -104,7 +93,7 @@ public class ValveCode : IValveCode
             var documents = await connection.QueryAsync<Valve_Code>(query, new { type, location });
             foreach (Valve_Code vc in documents)
             {
-                if (vc.hospitalId != null)
+                if (hospitalId != 0 && vc.hospitalId != null)
                 {
                     var hospital = hospitalId.ToString().makeSureTwoChar();
                     var help = vc.hospitalId.Split(',');
@@ -119,6 +108,8 @@ public class ValveCode : IValveCode
     }
     public async Task<Valve_Code?> addValveCode(Valve_Code vc)
     {
+        vc.No = await getNewHospitalNo();
+
         var query = "INSERT INTO ValveCodes (hospitalId,No,Vendor_description, Vendor_code, Model_code, Implant_position, uk_code,us_code, image, description, type, countries)" +
                     "VALUES (@hospitalId,@No,@Vendor_description, @Vendor_code, @Model_code, @Implant_position, @uk_code,@us_code, @image, @description, @type, @countries);" + " SELECT LAST_INSERT_ID() FROM ValveCodes";
 
@@ -226,15 +217,6 @@ public class ValveCode : IValveCode
         }
 
     }
-    public async Task<Valve_Code?> getDetailsByValveTypeId(int ValveTypeId)
-    {
-        var query = "SELECT * FROM ValveCodes WHERE ValveTypeId = @ValveTypeId";
-        using (var connection = _context.CreateConnection())
-        {
-            var result = await connection.QueryFirstOrDefaultAsync<Valve_Code>(query, new { ValveTypeId });
-            if (result != null) { return result; } else { return null; }
-        }
-    }
     public async Task<List<ValveCodeSizesDTO>?> getValveCodeSizes(int ValveTypeId)
     {
         var vcs_list = new List<ValveCodeSizesDTO>();
@@ -278,40 +260,13 @@ public class ValveCode : IValveCode
         }
 
     }
-    public async Task<Valve_Code?> getDetails(int code)
-    {
-        var query = "SELECT * FROM ValveSizes WHERE No = @code";
-        using (var connection = _context.CreateConnection())
-        {
-            var result = await connection.QueryFirstOrDefaultAsync<Valve_Code>(query, new { code });
-            if (result != null) { return result; } else { return null; }
-        }
-    }
     public async Task<List<Valve_Code>?> getAllProducts()
     {
-       var query = "SELECT * FROM ValveSizes";
+        var query = "SELECT * FROM ValveCodes";
         using (var connection = _context.CreateConnection())
         {
             var result = await connection.QueryAsync<Valve_Code>(query);
             if (result != null) { return result.ToList(); } else { return null; }
-        }
-    }
-    public async Task<Valve_Size?> getSize(int cid)
-    {
-        var query = "SELECT * FROM ValveSizes WHERE SizeId= @cid";
-        using (var connection = _context.CreateConnection())
-        {
-            var result = await connection.QueryFirstOrDefaultAsync<Valve_Size>(query, new { cid });
-            if (result != null) { return result; } else { return null; }
-        }
-    }
-    public async Task<Valve_Code?> getDetailsByProductCode(int code)
-    {
-         var query = "SELECT * FROM ValveSizes WHERE uk_code = @code";
-        using (var connection = _context.CreateConnection())
-        {
-            var result = await connection.QueryFirstOrDefaultAsync<Valve_Code>(query, new { code });
-            if (result != null) { return result; } else { return null; }
         }
     }
     public async Task<List<Valve_Code>?> getAllProductsByVTP(string vendor, string type, string position)
@@ -324,9 +279,67 @@ public class ValveCode : IValveCode
             foreach (Valve_Code vc in documents)
             {
                 vctr.Add(vc);
-               
+
             }
             return vctr;
         }
     }
+
+    public async Task<Valve_Size?> getSize(int cid)
+    {
+        var query = "SELECT * FROM ValveSizes WHERE SizeId= @cid";
+        using (var connection = _context.CreateConnection())
+        {
+            var result = await connection.QueryFirstOrDefaultAsync<Valve_Size>(query, new { cid });
+            if (result != null) { return result; } else { return null; }
+        }
+    }
+
+    public async Task<Valve_Code?> getDetailsByProductCode(string code)
+    {
+        var query = "SELECT * FROM ValveCodes WHERE uk_code = @code";
+        using (var connection = _context.CreateConnection())
+        {
+            var result = await connection.QueryFirstOrDefaultAsync<Valve_Code>(query, new { code });
+            if (result != null) { return result; } else { return null; }
+        }
+    }
+    public async Task<Valve_Code?> getDetailsByNo(int code)
+    {
+        var query = "SELECT * FROM ValveCodes WHERE No = @code";
+        using (var connection = _context.CreateConnection())
+        {
+            var result = await connection.QueryFirstOrDefaultAsync<Valve_Code>(query, new { code });
+            if (result != null) { return result; } else { return null; }
+        }
+    }
+    public async Task<Valve_Code?> getDetailsByValveTypeId(int ValveTypeId)
+    {
+        var query = "SELECT * FROM ValveCodes WHERE ValveTypeId = @ValveTypeId";
+        using (var connection = _context.CreateConnection())
+        {
+            var result = await connection.QueryFirstOrDefaultAsync<Valve_Code>(query, new { ValveTypeId });
+            if (result != null) { return result; } else { return null; }
+        }
+    }
+
+
+
+    private async Task<int> getNewHospitalNo()
+    {
+        var help = 0;
+        var allHospitalNumbers = new List<int>();
+        // get AllValveCodes
+        var allValveCodes = await getAllProducts();
+        if (allValveCodes != null)
+        {
+            foreach (Valve_Code vc in allValveCodes) { allHospitalNumbers.Add(vc.No); }
+            help = allHospitalNumbers.Count();
+            while (allHospitalNumbers.Contains(help)) { help++; }
+        }
+        return help;
+    }
+
+
+
 }
