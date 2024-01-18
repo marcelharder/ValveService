@@ -14,10 +14,10 @@ public class ValveSizeController : ControllerBase
         _code = code;
     }
 
-[HttpGet("{id}")]
-public async Task<IActionResult> getValveCodes(int id)
+[HttpGet("getSizesForValve/{id}")]
+public async Task<IActionResult> getSizesForValve(int id)
 {
-  var result = await _code.getSize(id);
+  var result = await _code.getSizesForValve(id);
   return Ok(result);
 }
 

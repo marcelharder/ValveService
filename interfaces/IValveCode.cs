@@ -4,9 +4,8 @@ namespace ValveService.interfaces;
 
 public interface IValveCode
 {
-
+    #region <!-- Valve Code Stuff-->
     Task<List<Class_Item>> getValveCodesPerCountry(string currentCountry);
-   
     Task<Valve_Code?> getDetailsByValveTypeId(int ValveTypeId);
     Task<Valve_Code?> getDetailsByNo(int code);
     Task<Valve_Code?> getDetailsByProductCode(string code);
@@ -21,9 +20,23 @@ public interface IValveCode
     Task<Valve_Code?> addValveCode(Valve_Code vc);
     Task<Valve_Code> updateValveCode(Valve_Code vc);
     Task<int> deleteValveCode(int id);
+#endregion
+
+   #region <!-- Valve Size Business-->
+
     Task<Valve_Size?> getSize(int cid);
 
+    Task<List<Valve_Size>?> getSizesForValve(int vid);
 
+    Task<int> deleteValveSize(int sid);
+
+    Task<int> updateValveSize(Valve_Size vs);
+
+    Task<int> addValveSize();
+
+    
+
+   #endregion
 
 
 

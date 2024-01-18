@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using ValveService.Data.dtos;
 
 namespace ValveService.implementations;
@@ -285,15 +286,7 @@ public class ValveCode : IValveCode
         }
     }
 
-    public async Task<Valve_Size?> getSize(int cid)
-    {
-        var query = "SELECT * FROM ValveSizes WHERE SizeId= @cid";
-        using (var connection = _context.CreateConnection())
-        {
-            var result = await connection.QueryFirstOrDefaultAsync<Valve_Size>(query, new { cid });
-            if (result != null) { return result; } else { return null; }
-        }
-    }
+   
 
     public async Task<Valve_Code?> getDetailsByProductCode(string code)
     {
@@ -340,6 +333,38 @@ public class ValveCode : IValveCode
         return help;
     }
 
+    public async Task<List<Valve_Size>?> getSizesForValve(int vid)
+    {
+        var query = "SELECT * FROM ValveSizes WHERE VTValveTypeId= @vid";
+        using (var connection = _context.CreateConnection())
+        {
+            var result = await connection.QueryAsync<Valve_Size>(query, new { vid });
+            if (result != null) { return result.ToList(); } else { return null; }
+        }
+    }
 
+    public async Task<Valve_Size?> getSize(int cid)
+    {
+        var query = "SELECT * FROM ValveSizes WHERE SizeId= @cid";
+        using (var connection = _context.CreateConnection())
+        {
+            var result = await connection.QueryFirstOrDefaultAsync<Valve_Size>(query, new { cid });
+            if (result != null) { return result; } else { return null; }
+        }
+    }
 
+    public Task<int> deleteValveSize(int sid)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> updateValveSize(Valve_Size vs)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> addValveSize()
+    {
+        throw new NotImplementedException();
+    }
 }
