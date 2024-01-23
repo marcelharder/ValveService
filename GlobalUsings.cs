@@ -14,6 +14,14 @@ global using Microsoft.EntityFrameworkCore;
 global using System.ComponentModel.DataAnnotations;
 global using ValveService.interfaces;
 global using Dapper;
+global using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+global using ValveService.Data.dtos;
+global using CloudinaryDotNet;
+global using CloudinaryDotNet.Actions;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc.Diagnostics;
+global using Microsoft.Extensions.Options;
+
 
 
 

@@ -12,7 +12,9 @@ public interface IValveCode
 
     Task<List<Valve_Code>?> getAllProducts();
     Task<List<ValveCodeSizesDTO>?> getValveCodeSizes(int id);
-    Task<List<Valve_Code>?> getAllProductsByVTP(string vendor, string type, string position);
+    Task<List<Valve_Code>?> getAllProductsByVTP(int vendor, string type, string position);
+    Task<List<Valve_Code>?> getAllProductsByVC(int vendor, string isoCountryCode);
+    Task<List<Class_Item>?> getAllProductsItemsByVC(int vendor, string isoCountryCode);
     Task<List<Valve_Code>> GetValveCodesInHospital(string type, string location, int hospitalId);
     Task<List<Class_Item>> GetValveCodesNOTinHospital(string type, string location, int hospitalId);
     Task<string> addHospitalIdToValveCode(int ValveTypeId, int hospitalId);
@@ -30,9 +32,9 @@ public interface IValveCode
 
     Task<int> deleteValveSize(int sid);
 
-    Task<int> updateValveSize(Valve_Size vs);
+    Task<Valve_Size> updateValveSize(Valve_Size vs);
 
-    Task<int> addValveSize();
+    Task<Valve_Size?> addValveSize(Valve_Size vs);
 
     
 

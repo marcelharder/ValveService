@@ -1,5 +1,4 @@
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
-using ValveService.Data.dtos;
+
 
 namespace ValveService.implementations;
 
@@ -11,6 +10,7 @@ public class ValveCode : IValveCode
         _context = context;
     }
 
+    #region <!-- ValveCode-->
     public async Task<string> addHospitalIdToValveCode(int ValveTypeId, int hospitalId)
     {
         var query = "SELECT * FROM ValveCodes WHERE ValveTypeId = @ValveTypeId";
@@ -80,7 +80,7 @@ public class ValveCode : IValveCode
                 cl.value = el.ValveTypeId;
                 vctr.Add(cl);
 
-                
+
             }
             return vctr;
         }
@@ -270,24 +270,6 @@ public class ValveCode : IValveCode
             if (result != null) { return result.ToList(); } else { return null; }
         }
     }
-    public async Task<List<Valve_Code>?> getAllProductsByVTP(string vendor, string type, string position)
-    {
-        var vctr = new List<Valve_Code>();
-        var query = "SELECT * FROM ValveCodes WHERE Type = @type AND Implant_position = @location AND Type = @type";
-        using (var connection = _context.CreateConnection())
-        {
-            var documents = await connection.QueryAsync<Valve_Code>(query, new { vendor, type, position });
-            foreach (Valve_Code vc in documents)
-            {
-                vctr.Add(vc);
-
-            }
-            return vctr;
-        }
-    }
-
-   
-
     public async Task<Valve_Code?> getDetailsByProductCode(string code)
     {
         var query = "SELECT * FROM ValveCodes WHERE uk_code = @code";
@@ -315,9 +297,6 @@ public class ValveCode : IValveCode
             if (result != null) { return result; } else { return null; }
         }
     }
-
-
-
     private async Task<int> getNewHospitalNo()
     {
         var help = 0;
@@ -333,6 +312,10 @@ public class ValveCode : IValveCode
         return help;
     }
 
+    #endregion
+
+    #region <!-- ValveSize-->
+
     public async Task<List<Valve_Size>?> getSizesForValve(int vid)
     {
         var query = "SELECT * FROM ValveSizes WHERE VTValveTypeId= @vid";
@@ -342,7 +325,6 @@ public class ValveCode : IValveCode
             if (result != null) { return result.ToList(); } else { return null; }
         }
     }
-
     public async Task<Valve_Size?> getSize(int cid)
     {
         var query = "SELECT * FROM ValveSizes WHERE SizeId= @cid";
@@ -352,19 +334,138 @@ public class ValveCode : IValveCode
             if (result != null) { return result; } else { return null; }
         }
     }
-
-    public Task<int> deleteValveSize(int sid)
+    public async Task<int> deleteValveSize(int sid)
     {
-        throw new NotImplementedException();
+        var query = @"Delete FROM ValveSizes WHERE SizeId = @sid";
+        using (var connection = _context.CreateConnection())
+        {
+            try { await connection.ExecuteAsync(query, new { sid }); return 1; }
+            catch (System.Exception e) { Console.Write(e.InnerException); return 0; }
+        }
+    }
+    public async Task<Valve_Size> updateValveSize(Valve_Size vs)
+    {
+        var query = @"UPDATE ValveSizes SET VTValveTypeId=@VTValveTypeId,Size=@Size,EOA=@EOA,ValveTypeId=@ValveTypeId WHERE SizeId=@SizeId";
+
+        var parameters = new DynamicParameters();
+        parameters.Add("SizeId", vs.SizeId);
+        parameters.Add("VTValveTypeId", vs.VTValveTypeId);
+        parameters.Add("Size", vs.Size);
+        parameters.Add("EOA", vs.EOA);
+        parameters.Add("ValveTypeId", vs.ValveTypeId);
+
+        using (var connection = _context.CreateConnection())
+        {
+            try
+            {
+                await connection.ExecuteAsync(query, parameters);
+            }
+            catch (System.Exception e)
+            {
+
+                Console.Write(e.InnerException);
+            }
+        }
+        return vs;
+    }
+    public async Task<Valve_Size?> addValveSize(Valve_Size vs)
+    {
+        var query = "INSERT INTO ValveSizes (VTValveTypeId,Size,EOA,ValveTypeId)" +
+                    "VALUES (@VTValveTypeId,@Size,@EOA,@ValveTypeId);" + " SELECT LAST_INSERT_ID() FROM ValveSizes";
+
+        var parameters = new DynamicParameters();
+
+        parameters.Add("VTValveTypeId", vs.VTValveTypeId);
+        parameters.Add("Size", vs.Size);
+        parameters.Add("EOA", vs.EOA);
+        parameters.Add("ValveTypeId", vs.ValveTypeId);
+
+        using (var connection = _context.CreateConnection())
+        {
+            var id = await connection.QueryFirstOrDefaultAsync<int>(query, parameters);
+            if (id != 0)
+            {
+                var createdValveSize = new Valve_Size
+                {
+
+                    SizeId = id,
+                    Size = vs.Size,
+                    EOA = vs.EOA,
+                    VTValveTypeId = vs.VTValveTypeId
+
+                };
+                return createdValveSize;
+            }
+            else { return null; }
+        }
     }
 
-    public Task<int> updateValveSize(Valve_Size vs)
+    #endregion
+
+    #region <!-- Vendor Stuff-->
+    public async Task<List<Valve_Code>?> getAllProductsByVTP(int vendor, string type, string position)
     {
-        throw new NotImplementedException();
+        var vctr = new List<Valve_Code>();
+        var query = "SELECT * FROM ValveCodes WHERE Vendor_code = @vendor AND Implant_position = @position AND Type = @type";
+        using (var connection = _context.CreateConnection())
+        {
+            var documents = await connection.QueryAsync<Valve_Code>(query, new { vendor, type, position });
+            foreach (Valve_Code vc in documents)
+            {
+                vctr.Add(vc);
+
+            }
+            return vctr;
+        }
+    }
+    public async Task<List<Valve_Code>?> getAllProductsByVC(int vendor, string isoCountryCode)
+    {
+        var vctr = new List<Valve_Code>();
+        var query = "SELECT * FROM ValveCodes WHERE Vendor_code = @vendor";
+        using (var connection = _context.CreateConnection())
+        {
+            var documents = await connection.QueryAsync<Valve_Code>(query, new { vendor });
+            foreach (Valve_Code vc in documents)
+            {
+                if (vc.countries != null)
+                {
+                    var help = vc.countries.Split(',');
+                    var countryList = help.ToList();
+                    if (countryList.Contains(isoCountryCode)) { vctr.Add(vc); }
+                }
+            }
+            return vctr;
+        }
+    }
+    public async Task<List<Class_Item>?> getAllProductsItemsByVC(int vendor, string isoCountryCode)
+    {
+        var vctr = new List<Class_Item>();
+        var query = "SELECT * FROM ValveCodes WHERE Vendor_code = @vendor";
+        using (var connection = _context.CreateConnection())
+        {
+            var documents = await connection.QueryAsync<Valve_Code>(query, new { vendor });
+            foreach (Valve_Code vc in documents)
+            {
+                if (vc.countries != null)
+                {
+                    var help = vc.countries.Split(',');
+                    var countryList = help.ToList();
+                    if (countryList.Contains(isoCountryCode))
+                    {
+                        var it = new Class_Item();
+                        it.value = vc.No;
+                        it.description = vc.Description;
+                        vctr.Add(it);
+                    }
+                }
+            }
+            return vctr;
+        }
     }
 
-    public Task<int> addValveSize()
-    {
-        throw new NotImplementedException();
-    }
+
+    #endregion
+
+
 }
+
