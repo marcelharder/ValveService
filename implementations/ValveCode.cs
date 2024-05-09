@@ -1,5 +1,4 @@
 
-
 namespace ValveService.implementations;
 
 public class ValveCode : IValveCode
@@ -431,7 +430,11 @@ public class ValveCode : IValveCode
                 {
                     var help = vc.countries.Split(',');
                     var countryList = help.ToList();
-                    if (countryList.Contains(isoCountryCode)) { vctr.Add(vc); }
+                    if (isoCountryCode == "All") { vctr.Add(vc); }
+                    else
+                    {
+                        if (countryList.Contains(isoCountryCode)) { vctr.Add(vc); }
+                    }
                 }
             }
             return vctr;
@@ -446,16 +449,29 @@ public class ValveCode : IValveCode
             var documents = await connection.QueryAsync<Valve_Code>(query, new { vendor });
             foreach (Valve_Code vc in documents)
             {
-                if (vc.countries != null)
+                if (isoCountryCode == "All")
                 {
-                    var help = vc.countries.Split(',');
-                    var countryList = help.ToList();
-                    if (countryList.Contains(isoCountryCode))
+
+                    var it = new Class_Item();
+                    it.value = vc.No;
+                    it.description = vc.Description;
+                    vctr.Add(it);
+
+                }
+                else
+                {
+                    if (vc.countries != null)
                     {
-                        var it = new Class_Item();
-                        it.value = vc.No;
-                        it.description = vc.Description;
-                        vctr.Add(it);
+                        var help = vc.countries.Split(',');
+                        var countryList = help.ToList();
+
+                        if (countryList.Contains(isoCountryCode))
+                        {
+                            var it = new Class_Item();
+                            it.value = vc.No;
+                            it.description = vc.Description;
+                            vctr.Add(it);
+                        }
                     }
                 }
             }
