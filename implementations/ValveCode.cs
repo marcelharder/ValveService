@@ -408,18 +408,28 @@ public class ValveCode : IValveCode
             foreach (Valve_Size vs in selectedSize)
             {
                 var eoa = vs.EOA;
-                advice = calculatePPM(p.Weight, p.Height, eoa);
+                advice = await calculatePPM(p.Weight, p.Height, eoa);
             }
         }
         return advice;
     }
 
-    private string calculatePPM(int weight, int height, float eoa)
+    private async Task<string> calculatePPM(int weight, int height, float eoa)
     {
-        var help = "";
-
-
-        return help;
+        var advice = "";
+        var help = 0.0;
+            await Task.Run(() =>
+            {
+                var bsa = 0.007184 * (Math.Pow(height, 0.725) * Math.Pow(weight, 0.425));
+                help = eoa / bsa;
+                 if (help < .85)
+                {
+                    if (help < .65) { advice = "severe"; }
+                    else { advice = "moderate"; }
+                }
+                else { advice = "no"; }
+            });
+            return advice;
     }
     #endregion
 
