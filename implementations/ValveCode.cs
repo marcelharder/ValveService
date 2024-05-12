@@ -398,7 +398,29 @@ public class ValveCode : IValveCode
             else { return null; }
         }
     }
+    public async Task<string> getPPM(PPMParamsDTO p)
+    {
+        var advice = "";
+        var valveSizes = await getSizesForValve(p.ValveTypeId);
+        if (valveSizes != null)
+        {
+            var selectedSize = valveSizes.Where(v => v.Size == p.Size);
+            foreach (Valve_Size vs in selectedSize)
+            {
+                var eoa = vs.EOA;
+                advice = calculatePPM(p.Weight, p.Height, eoa);
+            }
+        }
+        return advice;
+    }
 
+    private string calculatePPM(int weight, int height, float eoa)
+    {
+        var help = "";
+
+
+        return help;
+    }
     #endregion
 
     #region <!-- Vendor Stuff-->
@@ -478,6 +500,8 @@ public class ValveCode : IValveCode
             return vctr;
         }
     }
+
+
 
 
     #endregion

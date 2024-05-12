@@ -36,6 +36,8 @@ public interface IValveCode
 
     Task<Valve_Size?> addValveSize(Valve_Size vs);
 
+    Task<string> getPPM(PPMParamsDTO p);
+
     
 
    #endregion

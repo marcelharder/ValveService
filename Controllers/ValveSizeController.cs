@@ -26,6 +26,8 @@ public async Task<IActionResult> addSize([FromBody]Valve_Size vs){ var result = 
 [HttpGet("{SizeId}")]
 public async Task<IActionResult> getSize(int SizeId){ var result = await _code.getSize(SizeId); return Ok(result);}
 
+[HttpGet("getPPM")]
+public async Task<IActionResult> getPPM([FromQuery] PPMParamsDTO p){ var result = await _code.getPPM(p); return Ok(result);}
 
 
 }
